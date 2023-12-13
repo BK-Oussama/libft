@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 21:31:44 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/11/03 17:50:30 by ouboukou         ###   ########.fr       */
+/*   Created: 2023/12/08 15:29:42 by ouboukou          #+#    #+#             */
+/*   Updated: 2023/12/08 18:12:30 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int	ft_isascii(int arg)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (arg >= 0 && arg <= 127)
-		return (1);
-	else
-		return (0);
+	size_t	len;
+	char	*rslt;
+	size_t	i;
+
+	if (s == NULL || f == NULL)
+		return (NULL);
+	len = ft_strlen(s);
+	rslt = malloc((len + 1) * sizeof(char));
+	if (rslt == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		rslt[i] = f(i, s[i]);
+		i++;
+	}
+	rslt[len] = '\0';
+	return (rslt);
 }

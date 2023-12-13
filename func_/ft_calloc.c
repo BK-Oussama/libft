@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 21:31:44 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/11/03 17:50:30 by ouboukou         ###   ########.fr       */
+/*   Created: 2023/11/21 19:35:48 by ouboukou          #+#    #+#             */
+/*   Updated: 2023/12/03 17:45:42 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <ctype.h>
+#include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int	ft_isascii(int arg)
+void	*ft_calloc(size_t n_elm, size_t elm_size)
 {
-	if (arg >= 0 && arg <= 127)
-		return (1);
+	size_t	total_size;
+	size_t	size_max;
+	void	*ptr;
+
+	if (n_elm == 0 || elm_size == 0)
+		return (NULL);
+	size_max = SIZE_MAX;
+	total_size = n_elm * elm_size;
+	if (total_size >= size_max)
+		return (NULL);
 	else
-		return (0);
+	{
+		ptr = malloc(total_size);
+	}
+	if (ptr == NULL)
+		return (NULL);
+	else
+	{
+		ft_memset(ptr, 0, total_size);
+	}
+	return (ptr);
 }

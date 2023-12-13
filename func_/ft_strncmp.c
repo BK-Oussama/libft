@@ -9,16 +9,16 @@
 /*   Updated: 2023/11/20 17:00:09 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
-#include<string.h>
+#include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	size_t	i;
+
 	if (n == 0)
 		return (0);
-
-	size_t i;
-	
 	i = 0;
 	while (s1[i] && s1[i] == s2[i] && n)
 	{
@@ -26,14 +26,4 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 		n--;
 	}
 	return (s1[i] - s2[i]);
-}
-
-int main()
-{
-	const char *str1 = "Now ke are free!";
-	const char *str2 = "Now we are fxee!";
-	printf("FT_output: %d\n", ft_strncmp(str1, str2, 5));
-	printf("---------------------------------------------\n");
-	printf("std_output: %d\n", strncmp(str1, str2, 5));
-
 }

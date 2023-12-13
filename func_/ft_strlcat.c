@@ -9,18 +9,7 @@
 /*   Updated: 2023/11/17 17:08:38 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -44,4 +33,3 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[dest_length] = '\0';
 	return (j + src_length);
 }
-
