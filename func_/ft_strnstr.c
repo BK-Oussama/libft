@@ -6,7 +6,7 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 20:36:30 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/04 17:00:44 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:46:06 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,26 +18,21 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (*to_find == '\0')
-		return ((char *)(str));
 	i = 0;
-	j = 0;
-	while (*str && i < len)
+	if (*to_find == '\0' || to_find == NULL)
+		return ((char *)str);
+	while (str[i] != '\0' && i < len)
 	{
-		if (str[i] == to_find[j] && to_find[j])
+		j = 0;
+		while (to_find[j] == str[i + j] && i + j < len)
 		{
-			i++;
-			j++;
-			if (to_find[j] == '\0')
+			if (to_find[j + 1] == '\0')
 			{
-				return ((char *)(&str[i - j]));
+				return ((char *)str + i);
 			}
+			j++;
 		}
-		else
-		{
-			j = 0;
-			i++;
-		}
+		i++;
 	}
 	return (NULL);
 }

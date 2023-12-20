@@ -6,11 +6,16 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:25:17 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/11 17:37:48 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/17 21:42:44 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <fcntl.h>
 #include <unistd.h>
+
+static void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
 
 void	ft_putnbr_fd(int n, int fd)
 {

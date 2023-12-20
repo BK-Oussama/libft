@@ -6,14 +6,14 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:21:19 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/11/21 21:47:26 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/18 20:52:57 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int			i;
 	int			sign;
