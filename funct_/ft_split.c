@@ -6,7 +6,7 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 11:38:57 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/07 17:50:35 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:16:21 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 
 	rslt = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (rslt == NULL || s == NULL || c == '\0')
+	if (rslt == NULL || s == NULL)
 		return (0);
 	start = 0;
 	i = 0;

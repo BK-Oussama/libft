@@ -6,7 +6,7 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 19:16:17 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/08 12:17:21 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/20 21:38:16 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,6 +18,8 @@ static size_t	digits_len(int n)
 	size_t	i;
 
 	i = 0;
+	if (n < 0)
+		i = 1;
 	while (n)
 	{
 		n = n / 10;
@@ -26,7 +28,7 @@ static size_t	digits_len(int n)
 	return (i);
 }
 
-static	void	fill_str(char *str, long int n, size_t length)
+static void	fill_str(char *str, long int n, size_t length)
 {
 	str[length] = '\0';
 	while (length--)
@@ -34,6 +36,18 @@ static	void	fill_str(char *str, long int n, size_t length)
 		str[length] = n % 10 + '0';
 		n = n / 10;
 	}
+}
+
+static char	*zero_str(void)
+{
+	char	*digits_str;
+
+	digits_str = malloc(2);
+	if (digits_str == NULL)
+		return (0);
+	digits_str[0] = '0';
+	digits_str[1] = '\0';
+	return (digits_str);
 }
 
 char	*ft_itoa(int n)
@@ -47,17 +61,13 @@ char	*ft_itoa(int n)
 	if (n < 0)
 	{
 		nb = -nb;
-		len++;
 	}
+	if (n == 0)
+		return (zero_str());
 	digits_str = malloc((len + 1) * sizeof(char));
 	if (digits_str == NULL)
 		return (NULL);
 	digits_str[len] = '\0';
-	if (n == 0)
-	{
-		digits_str[0] = '0';
-		return (digits_str);
-	}
 	fill_str(digits_str, nb, len);
 	if (n < 0)
 		digits_str[0] = '-';
