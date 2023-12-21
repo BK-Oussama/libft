@@ -6,7 +6,7 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 17:46:44 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/19 12:30:06 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/21 10:45:35 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -31,5 +31,6 @@ char	*ft_strdup(const char *str)
 		ptr[i] = str[i];
 		i++;
 	}
+	ptr[i] = '\0';
 	return (ptr);
 }
