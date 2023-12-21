@@ -6,7 +6,7 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:10:10 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/06 10:45:18 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/21 21:53:30 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,8 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 
-	if (s1 == NULL || set == NULL)
-		return (NULL);
+	if (s1 == NULL || *s1 == '\0')
+		return (ft_strdup(""));
 	while (*s1 && strchr(set, *s1))
 		s1++;
 	i = ft_strlen(s1) - 1;
