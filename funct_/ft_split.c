@@ -6,14 +6,14 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 11:38:57 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/20 18:16:21 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/23 22:46:51 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<string.h>
-#include<stdio.h>
-#include<stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 static size_t	count_words(const char *s, char c)
 {

@@ -6,12 +6,12 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:09:01 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/03 17:21:49 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/23 22:45:27 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
 void	*ft_memset(void *s, int value, size_t n_byt)
 {

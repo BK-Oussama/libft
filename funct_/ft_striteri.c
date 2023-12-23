@@ -6,10 +6,11 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:13:22 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/17 22:23:00 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/23 22:46:28 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stddef.h>
+#include "libft.h"
+#include <stddef.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
