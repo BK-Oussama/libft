@@ -34,31 +34,58 @@ static size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static void	ft_free(char **s)
 {
-	char	**rslt;
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+}
+
+char **one_more_line(char const*s, char c, char **str, size_t count)
+{
 	size_t	start;
 	size_t	end;
 	size_t	i;
-
-	rslt = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (rslt == NULL || s == NULL)
-		return (0);
+	
 	start = 0;
 	i = 0;
-	while (i < count_words(s, c))
+	while (i < count)
 	{
 		while (s[start] == c)
+		{
 			start++;
+		}
 		end = start;
 		while (s[end] != c && s[end])
 		{
 			end++;
 		}
-		rslt[i] = ft_substr(s, start, (end - start));
+		str[i] = ft_substr(s, start, end - start);
+		if (str[i] == NULL)
+			ft_free(str);
 		start = end;
 		i++;
 	}
-	rslt[i] = 0;
-	return (rslt);
+    str[i] = 0;
+    return str;
+
+}
+
+char	**split(char const *s, char c)
+{
+	char	**new_str;
+	size_t	count;
+
+	count = count_word(s, c);
+	new_str = malloc((count + 1) * sizeof(char *));
+	if (new_str == NULL || s == NULL)
+		return (NULL);
+	one_more_line(s, c, new_str, count);
+    	return (new_str);
 }
