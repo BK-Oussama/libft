@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 static size_t	digits_len(int n)
 {

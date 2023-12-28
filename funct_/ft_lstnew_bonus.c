@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 22:15:20 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/20 21:14:08 by ouboukou         ###   ########.fr       */
+/*   Created: 2023/12/23 22:17:45 by ouboukou          #+#    #+#             */
+/*   Updated: 2023/12/28 12:44:12 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	len;
-	char	*str;
-	int		i;
-	int		j;
+	t_list	*rslt;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = malloc((len + 1) * sizeof(char));
-	if (str == NULL)
+	rslt = (t_list *)malloc(sizeof(t_list));
+	if (rslt == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2[j])
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
-	str[i] = '\0';
-	return (str);
+	rslt->content = content;
+	rslt->next = NULL;
+	return (rslt);
 }
