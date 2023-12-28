@@ -69,7 +69,7 @@ char	**one_more_line(char const*s, char c, char **str, size_t count)
 	return (str);
 }
 
-char	**split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**new_str;
 	size_t	count;

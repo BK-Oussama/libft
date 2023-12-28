@@ -23,6 +23,7 @@ B_OBJs = ft_lstnew_bonus.o ft_lstadd_front_bonus.o ft_lstsize_bonus.o ft_lstlast
 
 NAME = libft.a
 
+all: $(NAME)
 
 $(NAME): $(M_OBJs)
 	ar rcs $(NAME) $(M_OBJs)
