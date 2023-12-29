@@ -63,7 +63,7 @@ static char	**one_more_line(char const*s, char c, char **str, size_t count)
 		if (str[i] == NULL)
 		{
 			ft_free(str);
-			return (0)
+			return (0);
 		}
 		start = end;
 		i++;
