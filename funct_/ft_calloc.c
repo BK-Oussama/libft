@@ -15,19 +15,10 @@ void	*ft_calloc(size_t n_elm, size_t elm_size)
 {
 	void	*ptr;
 
-	if (n_elm == 0 || elm_size == 0)
-	{
-		ptr = malloc(1);
-		if (ptr == 0)
-			return (NULL);
-		return (ptr);
-	}
-	if ((SIZE_MAX / n_elm) < elm_size)
+	if (elm_size && n_elm >= SIZE_MAX / elm_size)
 		return (NULL);
 	ptr = malloc(n_elm * elm_size);
-	if (ptr == NULL)
-		return (NULL);
-	else
-		ft_memset(ptr, 0, (n_elm * elm_size));
+	if (ptr != NULL)
+		ft_bzero(ptr, n_elm * elm_size);
 	return (ptr);
 }
