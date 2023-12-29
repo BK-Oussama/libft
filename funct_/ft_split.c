@@ -61,7 +61,10 @@ static char	**one_more_line(char const*s, char c, char **str, size_t count)
 			end++;
 		str[i] = ft_substr(s, start, end - start);
 		if (str[i] == NULL)
-			return (ft_free(str));
+		{
+			ft_free(str);
+			return (0)
+		}
 		start = end;
 		i++;
 	}
