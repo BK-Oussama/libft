@@ -44,7 +44,7 @@ static void	ft_free(char **s)
 	free(s);
 }
 
-char	**one_more_line(char const*s, char c, char **str, size_t count)
+static char	**one_more_line(char const*s, char c, char **str, size_t count)
 {
 	size_t	start;
 	size_t	end;
