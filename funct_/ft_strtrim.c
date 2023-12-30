@@ -17,10 +17,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (s1 == NULL || *s1 == '\0')
 		return (ft_strdup(""));
-	while (*s1 && strchr(set, *s1))
+	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	i = ft_strlen(s1) - 1;
-	while (i && strchr(set, s1[i]))
+	while (i && ft_strchr(set, s1[i]))
 		i--;
 	return (ft_substr(s1, 0, i + 1));
 }
