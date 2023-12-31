@@ -82,5 +82,7 @@ char	**ft_split(char const *s, char c)
 	if (new_str == NULL || s == NULL)
 		return (NULL);
 	one_more_line(s, c, new_str, count);
+	if (new_str == NULL)
+		return (NULL);
 	return (new_str);
 }
