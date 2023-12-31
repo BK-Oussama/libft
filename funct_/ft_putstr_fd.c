@@ -6,7 +6,7 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 17:04:46 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/23 22:45:45 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/31 22:03:00 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,6 +14,6 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (s == NULL)
-		return;
+		return ;
 	write(fd, s, ft_strlen(s));
 }
