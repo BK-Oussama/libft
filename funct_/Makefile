@@ -28,15 +28,8 @@ all: $(NAME)
 $(NAME): $(M_OBJs)
 	ar rcs $(NAME) $(M_OBJs)
 
-$(M_OBJs): $(M_SRCs)
-	$(CC) $(CFLAGS) -c $(M_SRCs)
-
 bonus: $(B_OBJs)
-
-$(B_OBJs): $(B_SRCs)
-	$(CC) $(CFLAGS) -c $(B_SRCs)
 	ar rcs $(NAME) $(B_OBJs)
-
 
 clean:
 	rm -f $(M_OBJs) $(B_OBJs)
