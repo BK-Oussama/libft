@@ -6,7 +6,7 @@
 /*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 17:08:31 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/12/18 14:36:05 by ouboukou         ###   ########.fr       */
+/*   Updated: 2023/12/31 21:28:30 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,10 +14,12 @@
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
+	unsigned int	j;
 	unsigned int	dest_length;
 	unsigned int	src_length;
-	unsigned int	j;
 
+	if (dest == NULL && size == 0)
+		return (ft_strlen(src));
 	dest_length = ft_strlen(dest);
 	src_length = ft_strlen(src);
 	j = ft_strlen(dest);
