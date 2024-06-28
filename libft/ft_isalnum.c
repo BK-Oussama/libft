@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ouboukou <ouboukou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:10:16 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/11/02 21:28:54 by ouboukou         ###   ########.fr       */
+/*   Updated: 2024/06/28 16:54:26 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 int	ft_isalnum(int arg)
 {
 	if ((arg >= '0' && arg <= '9') || (arg >= 'A' && arg <= 'Z') || (arg >= 'a'
 			&& arg <= 'z'))
-		return (1);
-	else
 		return (0);
+	else
+		return (1);
 }

@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ouboukou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ouboukou <ouboukou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:32:40 by ouboukou          #+#    #+#             */
-/*   Updated: 2023/11/02 18:35:07 by ouboukou         ###   ########.fr       */
+/*   Updated: 2024/06/28 16:54:48 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 int	ft_isalpha(int arg)
 {
 	if ((arg >= 65 && arg <= 90) || (arg >= 97 && arg <= 122))
-	{
-		return (1);
-	}
-	else
 		return (0);
+	else
+		return (1);
 }
