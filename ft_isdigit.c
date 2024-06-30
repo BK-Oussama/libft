@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouboukou <ouboukou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 17:28:31 by ouboukou          #+#    #+#             */
-/*   Updated: 2024/06/28 16:56:05 by ouboukou         ###   ########.fr       */
+/*   Created: 2023/11/02 18:32:20 by ouboukou          #+#    #+#             */
+/*   Updated: 2024/06/28 16:55:03 by ouboukou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int	ft_tolower(int arg)
+int	ft_isdigit(int arg)
 {
-	if (arg >= 65 && arg <= 90)
-		return (arg + 32);
+	if (arg >= '0' && arg <= '9')
+		return (0);
 	else
-		return (arg);
+		return (1);
 }
